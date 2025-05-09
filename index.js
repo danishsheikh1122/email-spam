@@ -89,11 +89,11 @@ const interval = setInterval(() => {
   currentDate.setSeconds(currentDate.getSeconds() + 5);
   
   // Optional: Stop after 50 commits (remove this line if you want it to run indefinitely)
-  if (commitCount >= 50) {
+  if (commitCount >= 1000) {
     console.log('\n🛑 Stopping after 50 commits');
     clearInterval(interval);
   }
-}, 5000); // 5000ms = 5 seconds
+}, 4000); // 5000ms = 5 seconds
 
 // Handle Ctrl+C gracefully
 process.on('SIGINT', () => {
