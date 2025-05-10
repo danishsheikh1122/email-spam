@@ -27,7 +27,7 @@ function gitAutoCommit(date, message) {
 const today = new Date();
 const hardcodedDate = '2025-05-10T14:39:24Z'; // Fixed time of day
 console.log(hardcodedDate)
-const commitMessage = 'Demo commit';
+const commitMessage = 'leetboost all patches ';
 
 // Call the function with today's date hardcoded
 gitAutoCommit(hardcodedDate, commitMessage);
