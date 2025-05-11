@@ -64,7 +64,7 @@ function gitAutoCommit(date, message) {
 }
 
 // Starting from 2025-05-09 at midnight
-let currentDate = new Date('2025-05-09T00:00:00Z');
+let currentDate = new Date('2025-05-11T00:00:00Z');
 const commitMessage = 'leetboost all patches';
 let commitCount = 0;
 
@@ -85,22 +85,15 @@ const interval = setInterval(() => {
     return;
   }
   
-  // Every 100 commits, move to the next day
-  if (commitCount % 100 === 0) {
-    currentDate.setDate(currentDate.getDate() + 1);
-    currentDate.setHours(0, 0, 0, 0); // Reset to midnight
-    console.log(`🗓️  Moving to next day: ${currentDate.toISOString()}`);
-  } else {
-    // Increment time by 5 seconds
-    currentDate.setSeconds(currentDate.getSeconds() + 5);
-  }
+  // Increment time by 5 seconds
+  currentDate.setSeconds(currentDate.getSeconds() + 5);
   
-  // Optional: Stop after a certain number of commits (remove this line if you want it to run indefinitely)
+  // Optional: Stop after 50 commits (remove this line if you want it to run indefinitely)
   if (commitCount >= 1000) {
-    console.log('\n🛑 Stopping after 1000 commits');
+    console.log('\n🛑 Stopping after 50 commits');
     clearInterval(interval);
   }
-}, 4000); // 4000ms = 4 seconds
+}, 4000); // 5000ms = 5 seconds
 
 // Handle Ctrl+C gracefully
 process.on('SIGINT', () => {
